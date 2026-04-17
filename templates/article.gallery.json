@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "gallery-article",
+      "blocks": {
+        "title_UrxXzc": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "content_bWLdqz": {
+          "type": "content",
+          "settings": {}
+        },
+        "checkbox_Erw9m7": {
+          "type": "checkbox",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_UrxXzc",
+        "content_bWLdqz",
+        "checkbox_Erw9m7"
+      ],
+      "custom_css": [
+        "header, h1 {margin-bottom: 0 !important;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

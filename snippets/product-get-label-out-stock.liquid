@@ -1,0 +1,4 @@
+<div class="{% if available %} d-none-important{% endif %}" data-js-product-label-out-stock>{{ 'products.product.label.out_stock' | t }}</div>
+{%- if available == false -%}
+    {%- assign has_labels = true -%}
+{%- endif -%}

@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "career-blog",
+      "blocks": {
+        "tags": {
+          "type": "tags",
+          "disabled": true,
+          "settings": {
+            "title": "TAGS",
+            "show_border": true
+          }
+        },
+        "subscription": {
+          "type": "subscription",
+          "disabled": true,
+          "settings": {
+            "title": "NEWSLETTER SUBSCRIPTION",
+            "show_border": false,
+            "paragraph": "Sign up for Shella updates to receive information about new arrivals, future events and specials.",
+            "button_text": "SUBSCRIBE!",
+            "placeholder": "Enter your email address"
+          }
+        }
+      },
+      "block_order": [
+        "tags",
+        "subscription"
+      ],
+      "settings": {
+        "show_title": true,
+        "custom_html": "UVU is rapidly transforming the running and sportswear scene, evolving from founder Adi Gillespie’s vision into a global phenomenon defined by the \"graceful pursuit of a superior self.\" In 2023, the brand made headlines with sell-out pop-ups in cities like Paris, Milan, and New York. Building on that momentum, 2024 has seen UVU’s reach expand even further, launching a global e-commerce website and hosting sell-out pop-up stores in London and Berlin. With sales accelerating worldwide, UVU continues to push boundaries in sport, style, and community.  \n<br><br>\nWe are building a team that mirrors our philosophy, creating an environment that gives outstanding people opportunity to find their superior self.\n\n<br><br><strong>Vacancies</strong>",
+        "default_image": "shopify://shop_images/office.jpg",
+        "type": "1",
+        "masonry_enable": false,
+        "max_posts": 12,
+        "show_image": false,
+        "show_information": false,
+        "show_tags": false,
+        "show_content": false,
+        "show_button": false,
+        "show_comments": false,
+        "show_empty_comments": false,
+        "max_post_content_length": 100
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

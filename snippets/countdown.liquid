@@ -1,0 +1,165 @@
+<!-- snippets/promobox.liquid -->
+{%- assign signup = signup | default: block.settings.signup-form %}
+{%- assign height = height | default: block.settings.height | default: 'auto' -%}
+{%- assign min_height = min_height | default: block.settings.min_height -%}
+{%- assign image = image | default: block.settings.image2 -%}
+{%- assign image_size = image_size | default: block.settings.image_size2 -%}
+{%- assign image_mobile = image_mobile | default: block.settings.image_mobile2 -%}
+{%- assign video_mobile = video_mobile | default: block.settings.videoMobile -%}
+{%- assign video_desktop = video_desktop | default: block.settings.videoDesktop -%}
+{%- assign image_mobile_size = image_mobile_size | default: block.settings.image_mobile_size2 -%}
+{%- assign image_position_x = image_position_x | default: block.settings.image_position_x -%}
+{%- assign color_image_mask = color_image_mask | default: block.settings.color_image_mask -%}
+{%- assign image_mask_opacity = image_mask_opacity | default: block.settings.image_mask_opacity -%}
+{%- assign url = url | default: block.settings.url -%}
+{%- assign button_1 = button_1 | default: block.settings.button_1 -%}
+{%- assign button_1_url = button_1_url | default: block.settings.button_1_url | default: url | default: '/' -%}
+{%- assign color_button_type_1 = color_button_type_1 | default: block.settings.color_button_type_1 -%}
+{%- assign video_lazyload = video_lazyload | default: false -%}
+{%- assign video_mp4_url = video_mp4_url | default: block.settings.video_mp4_url -%}
+{%- assign video_external_url = video_external_url | default: block.settings.video_external_url -%}
+{%- assign color_bg = color_bg | default: block.settings.color_bg -%}
+{%- assign parallax = parallax | default: block.settings.parallax -%}
+{% comment %} countdown {% endcomment %}
+{%- assign date_picker = date_picker | default: block.settings.date_picker -%}
+{%- assign prelaunch-text = prelaunch-text | default: block.settings.prelaunch-text -%}
+{%- assign postlaunch-text = postlaunch-text | default: block.settings.postlaunch-text -%}
+{%- assign launch-button-text = launch-button-text | default: block.settings.launch-button-text -%}
+{%- assign launch-button-url = launch-button-url | default: block.settings.launch-button-url -%}
+{% assign now = "now" | date: "%s" %}
+{% assign launch = date_picker | date: "%s" %}
+
+{% assign launchStatus = 'pre' %}
+{% if now > launch %}
+  {% assign launchStatus = 'post' %}
+{% endif %}
+
+{%- if image_mobile != blank -%}
+    {%- capture res_image_mobile_size -%}{{ image_mobile_size | default: image_mobile_size }}x{%- endcapture -%}
+    {%- assign desktop_n_mobile_image = true -%}
+{%- endif -%}
+
+{%- if image != blank -%}
+    {%- if responsive_height != blank or min_height > 0 -%}
+        {%- if image_position_x != blank and image_position_x != '50' -%}
+            {% capture styles_image_size_html %}
+                <style>
+                    @media (max-width: 1024px) {
+                        .{{ block_id }} .rimage__img--cover {
+                            object-position: {{ 100 | minus: image_position_x }}% 50%;
+                        }
+                    }
+                </style>
+            {% endcapture %}
+            {%- if request.design_mode -%}
+                {{ styles_image_size_html }}
+            {%- else -%}
+                <template class="js-loader-inline-style" data-key="{{ styles_image_size_html | hmac_sha1: 'secret_key' }}">{{ styles_image_size_html }}</template>
+            {%- endif -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endif -%}
+
+{% capture res_bg %}
+    {%- if video_mobile != blank -%}
+        <video playsinline="playsinline" loop="loop" muted="muted" autoplay="autoplay" preload="metadata" class="w-100 cover">
+            {%- if video_desktop != blank -%}
+                <source src="{{ video_desktop.sources[1].url }}" type="video/mp4" {%- if video_mobile != blank -%} media="(min-width:481px)" {% endif %}>
+            {% endif %}
+            <source src="{{ video_mobile.sources[1].url }}" type="video/mp4" {%- if video_desktop != blank -%} media="(max-width:480px)" {% endif %}>
+        </video>
+    {%- else -%}
+        {%- assign promobox_bg_is = 'image' -%}
+        {% render 'rimage' with image: image size: res_image_size format: image_format responsive_height: responsive_height ultra_responsive_height: ultra_responsive_height min_height: min_height is_parallax: true parallax_type: parallax only_desktop: desktop_n_mobile_image height: height %}
+            {%- if image_mobile != blank -%}
+                {% render 'rimage' with image: image_mobile size: res_image_mobile_size format: image_format responsive_height: responsive_height ultra_responsive_height: ultra_responsive_height min_height: min_height is_parallax: true parallax_type: parallax only_mobile: desktop_n_mobile_image height: height %}
+            {%- endif -%}
+
+    {%- endif -%}
+{% endcapture %}
+
+{%- if color_image_mask != blank and color_image_mask != 'rgba(0,0,0,0)' -%}
+    {% capture res_bg %}
+        {{ res_bg }}
+        <div class="absolute-stretch pointer-events-none" style="background-color: {{ color_image_mask }}; opacity: {{ image_mask_opacity }};"></div>
+    {% endcapture %}
+{%- endif -%}
+
+
+
+
+
+    
+        {%- capture content -%}
+            <div class="d-flex flex-column">
+                {% comment %} date_picker ={{ date_picker }}
+                postlaunch-text = {{postlaunch-text }}
+                launch-button-text = {{ launch-button-text }}
+                launch-button-url = {{ launch-button-url }} {% endcomment %}
+                {%- if prelaunch-text -%}
+                    <p class="promobox__text-1 h5">
+                        {% if launchStatus == "pre" %}
+                            {{ prelaunch-text }}
+                        {% else %}
+                            {{ postlaunch-text }}
+                        {% endif %}
+                    </p>
+                    {% if launchStatus == "post" and launch-button-url != blank %}
+                        <div class="promobox__btns mt-25">
+                            <div class="row no-gutters">
+                                <div class="col-12 mb-10 mb-lg-0 pr-lg-5">
+                                    <a href="{{ launch-button-url }}" class="promobox__btn-1 btn btn--{{ color_button_type_1 | replace: '-transparent', ' btn--transparent' }}">{{ launch-button-text }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        {%- endcapture -%}
+    
+        {% capture signup_form %}
+            <div class="subscription-form subscription-form--style-3">
+                <div class="container p-20">
+                    <div class="row">
+                        <div class="col-12 d-lg-flex flex-lg-column justify-content-lg-center align-items-lg-stretch col-lg-6 offset-lg-3">
+                            <div class="subscription-form__form">
+                                <div class="d-flex flex-row flex-center">
+                                    
+                                        {% form 'customer', id: null, class: 'subscription-form form-group--type-inline d-flex d-flex flex-row flex-lg-row mb-0 w-100' %}
+                                            {% render 'form-get-check-error-popup' %}
+                                            <input type="hidden" name="contact[tags]" value="locksmith">
+                                            <input type="email" name="contact[email]" class="{% if form.errors %} input--error{% endif %}" placeholder="{{ 'contact.form.email_title' | t }}" required="required">
+                                            <input type="submit" class="input-checkbox-disable-body btn" name="commit" value="Get Access">
+                                        {% endform %}
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endcapture %}
+        <div id="countdown">
+            <div class="promobox position-relative">
+                <div class="d-block">
+                    {{ res_bg }}
+                </div>
+                <div class="countdown-textcontent">
+                    {{ content }}
+                    {% if signup == true and launchStatus == "pre" %}
+                        {{ signup_form }}
+                    {% endif %}        
+                </div>
+            </div>
+            
+        </div>
+
+        {% if launchStatus == "pre" %}
+        <script src="{{ 'countdown-timer.js' | asset_url }}"></script>
+        {% assign today = "now" | date: "%Y-%m-%d %H:%M:%S" %}
+              <script>
+                  launch_date = '{{ date_picker }}';
+                  todayDate = '{{ today }}';
+                  countdown(launch_date,todayDate,"countdown")
+              </script>
+        {% endif %}

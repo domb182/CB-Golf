@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "show_content": true
+      }
+    },
+    "custom_liquid_kBpVzi": {
+      "type": "custom-liquid",
+      "name": "Script",
+      "settings": {
+        "use_container": true,
+        "custom_liquid": "<!-- TrustBox script -->\n<script type=\"text/javascript\" src=\"//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js\" async></script>\n<!-- End TrustBox script -->"
+      }
+    },
+    "custom_liquid_grRLEb": {
+      "type": "custom-liquid",
+      "name": "Reviews",
+      "settings": {
+        "use_container": true,
+        "custom_liquid": "<!-- TrustBox widget - Grid -->\n<div class=\"trustpilot-widget\" data-locale=\"en-GB\" data-template-id=\"539adbd6dec7e10e686debee\" data-businessunit-id=\"67078b74b9a5cccb5b716abc\" data-style-height=\"700px\" data-style-width=\"100%\" data-stars=\"1,2,3,4,5\">\n  <a href=\"https://uk.trustpilot.com/review/uvuclub.com\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_kBpVzi",
+    "custom_liquid_grRLEb"
+  ]
+}

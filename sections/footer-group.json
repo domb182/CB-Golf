@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "1586284525260": {
+          "type": "menu",
+          "settings": {
+            "title": "Help",
+            "show_title_on_desktop": true,
+            "menu": "main-menu",
+            "size": 0,
+            "rows_limit": 0
+          }
+        },
+        "menu_TF9zYp": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "title": "Info",
+            "show_title_on_desktop": true,
+            "menu": "main-menu",
+            "size": 0,
+            "rows_limit": 0
+          }
+        },
+        "1586284588048": {
+          "type": "social_media",
+          "settings": {
+            "title": "Follow us",
+            "show_facebook": false,
+            "show_twitter": false,
+            "show_instagram": true,
+            "show_pinterest": false,
+            "show_youtube": false,
+            "show_behance": false,
+            "show_skype": false,
+            "show_tiktok": true
+          }
+        },
+        "footer-0": {
+          "type": "copyright",
+          "settings": {
+            "page_content": "include-footer-copyright-3"
+          }
+        },
+        "1586284627913": {
+          "type": "payments",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "1586284525260",
+        "menu_TF9zYp",
+        "1586284588048",
+        "footer-0",
+        "1586284627913"
+      ],
+      "settings": {
+        "type": "6",
+        "style": "2",
+        "show_logo": true,
+        "show_button_back_to_top": true,
+        "enable_fixed": false,
+        "enable_follow_on_shop": false
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1586279708879": {
+      "type": "home-builder",
+      "blocks": {
+        "countdown_CJxe3R": {
+          "type": "countdown",
+          "settings": {
+            "date_picker": "2026-04-19 20:00",
+            "prelaunch-text": "Drop 2 | 19.04.26",
+            "signup-form": true,
+            "postlaunch-text": "Drop 2",
+            "launch-button-text": "Shop",
+            "launch-button-url": "shopify://collections/drop-2",
+            "url": "",
+            "image2": "shopify://shop_images/84233D20-81C7-408F-86A9-1CF35616DAF6_1_201_a.compressed.compressed.jpg",
+            "image_size": 2500,
+            "image_mobile2": "shopify://shop_images/CB_Selects-203.compressed.jpg",
+            "image_mobile_size": 550,
+            "image_position_x": 50,
+            "min_height": 0,
+            "color_image_mask": "rgba(0,0,0,0)",
+            "image_mask_opacity": 0.1,
+            "style": "2"
+          }
+        }
+      },
+      "block_order": [
+        "countdown_CJxe3R"
+      ],
+      "custom_css": [],
+      "settings": {
+        "title": "",
+        "container": "fullwidth",
+        "size_of_columns": "1",
+        "size_of_columns_mobile": "1",
+        "margins_for_columns": "none",
+        "align_of_columns": "top_center",
+        "disable_column_paddings": false,
+        "precedence": "",
+        "customization_class": "fullScreen"
+      }
+    },
+    "sorting_collections_BLyDAa": {
+      "type": "sorting-collections",
+      "blocks": {
+        "collection_JqRy6i": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "shop"
+          }
+        }
+      },
+      "block_order": [
+        "collection_JqRy6i"
+      ],
+      "custom_css": [
+        ".sorting-collections__head {display: none;}"
+      ],
+      "name": "Collections",
+      "settings": {
+        "size_of_columns": "4",
+        "max_count": 4,
+        "show_btn_more_products": false
+      }
+    },
+    "spacer_DzBGxj": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "margin_top": 60,
+        "margin_bottom": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "container": "boxed",
+        "show_separator": false,
+        "title": ""
+      }
+    },
+    "home_builder_qwGgX3": {
+      "type": "home-builder",
+      "blocks": {
+        "custom_html_FzeCxG": {
+          "type": "custom_html",
+          "settings": {
+            "page_content": "about",
+            "liquid": "",
+            "size_of_column": "8"
+          }
+        }
+      },
+      "block_order": [
+        "custom_html_FzeCxG"
+      ],
+      "name": "Intro",
+      "settings": {
+        "title": "",
+        "container": "boxed",
+        "size_of_columns": "1",
+        "size_of_columns_mobile": "1",
+        "margins_for_columns": "none",
+        "align_of_columns": "top_center",
+        "disable_column_paddings": false,
+        "precedence": "",
+        "customization_class": ""
+      }
+    },
+    "spacer_FiCRJ8": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "margin_top": 60,
+        "margin_bottom": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "container": "boxed",
+        "show_separator": false,
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "1586279708879",
+    "sorting_collections_BLyDAa",
+    "spacer_DzBGxj",
+    "home_builder_qwGgX3",
+    "spacer_FiCRJ8"
+  ]
+}

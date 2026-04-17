@@ -1,0 +1,11 @@
+{% liquid
+    assign text = 'Last Posting Date For Christmas 20th Dec (23rd For Next Day Delivery)'
+    if localization.market.handle == "eu"
+        assign text = 'Last Posting Date For Christmas 20th Dec'
+    elsif localization.market.handle == "us"
+        assign text = 'Last Posting Date For Christmas 19th Dec'
+    elsif localization.market.handle == "row" or localization.market.handle == "korea" or localization.market.handle == "international"
+        assign text = 'Last Posting Date For Christmas 17th Dec'
+    endif
+%}
+<a class="link-unstyled" href="https://uvuclub.com/pages/shipping-returns">{{ text }}</a>

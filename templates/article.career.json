@@ -1,0 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "career-article",
+      "settings": {
+        "show_information": false,
+        "show_image": true,
+        "show_content": true,
+        "show_tags": false,
+        "show_social_share_buttons": false,
+        "social_share_buttons_type": "1",
+        "show_navigation": false,
+        "show_comments": false,
+        "autoplay": false,
+        "speed": 5,
+        "infinite": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

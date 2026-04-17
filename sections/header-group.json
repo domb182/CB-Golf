@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "blocks": {
+        "tape_e89M3w": {
+          "type": "tape",
+          "disabled": true,
+          "settings": {
+            "delay": 0,
+            "style": "1",
+            "transparent_bg": false,
+            "content": "",
+            "custom_liquid": "{% render 'cutoff' %}"
+          }
+        }
+      },
+      "block_order": [
+        "tape_e89M3w"
+      ],
+      "settings": {
+        "type": "2",
+        "style": "1",
+        "transparent_bg": "transparent",
+        "invert_hp": true,
+        "logo_mobile_centered": true,
+        "height": 65,
+        "items_padding": 0,
+        "menu": "main-menu",
+        "show_menu_arrows": true,
+        "show_menu_hover_underline": false,
+        "vertical_menu": "",
+        "fixed_vertical_menu": false,
+        "additional_line_info_page_content": "",
+        "enable_country_selector": true,
+        "show_country_name": true,
+        "country_selector_max_width": 140,
+        "sticky": "desktop_and_mobile",
+        "desktop_sticky_type": "wide",
+        "hide_sticky_when_scroll_down": true
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

@@ -1,0 +1,48 @@
+{% assign launch_date = '2025-03-30 20:00' %}
+{% assign today = "now" | date: "%Y-%m-%d %H:%M:%S" %}
+{% assign now = "now" | date: "%s" %}
+{% assign launch = launch_date | date: "%s" %}
+{% assign launchStatus = 'pre' %}
+{% if now > launch %}
+  {% assign launchStatus = 'post' %}
+{% endif %}
+
+{% if launchStatus == "pre" %}
+    <div id="countdown">
+    <ul class="countdown animate reveal text-light d-flex justify-content-center list-unstyled gap-5">
+        <li>
+          <span class="day h1">0</span>:
+        </li>
+          <li>
+          <span class="hour h1">0</span>:
+        </li>
+          <li>
+          <span class="min h1">0</span>:
+        </li>
+          <li>
+          <span class="sec h1">0</span>
+        </li>
+      </ul>
+    </div>
+
+<script>
+    function loadCountdownScript(callback) {
+        var script = document.createElement("script");
+        script.src = "{{ 'countdown-timer.js' | asset_url }}";
+        script.onload = callback; // Wait until script is fully loaded
+        document.head.appendChild(script);
+    }
+
+    loadCountdownScript(function () {
+        if (typeof countdown === "function") {
+            const launch_date = '{{ launch_date | date: "%Y-%m-%d %H:%M:%S" }}';
+            const todayDate = '{{ today }}';
+            countdown(launch_date, todayDate, "countdown");
+        } else {
+            console.error("countdown function is not defined.");
+        }
+    });
+</script>
+
+
+{% endif %}

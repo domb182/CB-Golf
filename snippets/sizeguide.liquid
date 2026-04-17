@@ -1,0 +1,143 @@
+{% if product.metafields.custom.size_guide %}
+    {% assign chart = product.metafields.custom.size_guide.value.size_chart %}
+    {% assign img = product.metafields.custom.size_guide.value.image %}
+    {% assign model = product.metafields.custom.size_guide.value.model %}
+    
+    {% assign rows = chart | split: '::' %}
+    {% assign sizes = 'xs, s, m, l, xl, xxl' | upcase | split: ', ' %}
+  
+    <div class="sizeChart d-flex flex-column gap-5">
+      <h5>{{ 'products.product.size_chart' | t }}</h5>
+
+      {% if img %}
+        {% render 'rimage' with image: img size: '270x' format: 'pjpg' alt: product.title  %}
+      {% endif %}
+      <div class="tabset-{{ placement }}">
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset-{{ placement }}" id="tab2-{{ placement }}" aria-controls="cm" checked>
+        <label for="tab2-{{ placement }}">CM</label>
+        <!-- Tab 2 -->
+        <input type="radio" name="tabset-{{ placement }}" id="tab1-{{ placement }}" aria-controls="inch">
+        <label for="tab1-{{ placement }}">Inch</label>
+
+        <div class="tab-panels">
+          <table id="cm" class="tab-panel">
+            {% for row in rows %}
+              <tr>
+                {% assign columns = row | split: ' ' %}
+                {% for col in columns %}
+                  <td>
+                  {% if col == "Size" %}{{ 'products.product.chart.size' | t }}
+                  {% elsif col == "Chest" %}{{ 'products.product.chart.chest' | t }}
+                  {% elsif col == "Length" %}{{ 'products.product.chart.length' | t }}
+                  {% elsif col == "Front&nbsp;Length" %}{{ 'products.product.chart.front_length' | t }}
+                  {% elsif col == "Waist" %}{{ 'products.product.chart.waist' | t }}
+                  {% elsif col == "Inseam" %}{{ 'products.product.chart.inseam' | t }}
+                  {% elsif col == "Front&nbsp;Rise" %}{{ 'products.product.chart.front_rise' | t }}
+                  {% elsif col == "Back&nbsp;Rise" %}{{ 'products.product.chart.back_rise' | t }}
+                  {% elsif col == "Sleeve&nbsp;Length" %}{{ 'products.product.chart.sleeve_length' | t }}
+                  {% elsif col == "Sleeve&nbsp;Opening" %}{{ 'products.product.chart.sleeve_opening' | t }}
+                  {% elsif col == "In&nbsp;Leg" %}{{ 'products.product.chart.in_leg' | t }}
+                  {% elsif col == "Shoulder" %}{{ 'products.product.chart.shoulder' | t }}
+                  {% elsif col == "Outside&nbsp;Leg" %}{{ 'products.product.chart.outside_leg' | t }}
+                  {% elsif col == "Inside&nbsp;Leg" %}{{ 'products.product.chart.inside_leg' | t }}
+                  {% elsif col == "Back&nbsp;Length" %}{{ 'products.product.chart.back_length' | t }}
+                  {% elsif sizes contains col %}
+                  {{ 'products.product.size_option.' | append: col | downcase | t }}
+                  {% else %}
+                    {{ col }}
+                  {% endif %}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </table>
+          <table id="inch" class="tab-panel">
+            {% for row in rows %}
+              <tr>
+                {% assign columns = row | split: ' ' %}
+                {% for col in columns %}
+                  <td>
+                  {% if col == "Size" %}{{ 'products.product.chart.size' | t }}
+                  {% elsif col == "Chest" %}{{ 'products.product.chart.chest' | t }}
+                  {% elsif col == "Length" %}{{ 'products.product.chart.length' | t }}
+                  {% elsif col == "Front&nbsp;Length" %}{{ 'products.product.chart.front_length' | t }}
+                  {% elsif col == "Waist" %}{{ 'products.product.chart.waist' | t }}
+                  {% elsif col == "Inseam" %}{{ 'products.product.chart.inseam' | t }}
+                  {% elsif col == "Front&nbsp;Rise" %}{{ 'products.product.chart.front_rise' | t }}
+                  {% elsif col == "Back&nbsp;Rise" %}{{ 'products.product.chart.back_rise' | t }}
+                  {% elsif col == "Sleeve&nbsp;Length" %}{{ 'products.product.chart.sleeve_length' | t }}
+                  {% elsif col == "Sleeve&nbsp;Opening" %}{{ 'products.product.chart.sleeve_opening' | t }}
+                  {% elsif col == "In&nbsp;Leg" %}{{ 'products.product.chart.in_leg' | t }}
+                  {% elsif col == "Shoulder" %}{{ 'products.product.chart.shoulder' | t }}
+                  {% elsif col == "Outside&nbsp;Leg" %}{{ 'products.product.chart.outside_leg' | t }}
+                  {% elsif col == "Inside&nbsp;Leg" %}{{ 'products.product.chart.inside_leg' | t }}
+                  {% elsif col == "Back&nbsp;Length" %}{{ 'products.product.chart.back_length' | t }}
+                  {% elsif sizes contains col %}
+                    {{ 'products.product.size_option.' | append: col | downcase | t }}
+                  {% else %}
+                    {% if col contains "-" %}
+                      {{ col }}
+                    {% else %}
+                      {% assign num = col | replace: 'cm', '' | replace: '"', '' | plus: 0 %}
+                      {% if num > 0 %}
+                        {{ num | times: 0.393701 | round: 2 }}
+                      {% else %}
+                        {{ col }}
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      {% if model %}
+      <div>
+        <p>{{ model }}</p>
+      </div>
+      {% endif %}
+      
+    </div>
+  
+    {% style %}
+    .tabset-{{ placement }} > input[type='radio'] {
+      position: absolute;
+      left: -200vw;
+    }
+    .tabset-{{ placement }} label {
+      padding: 1rem;
+      cursor:pointer;
+    }
+    .tabset-{{ placement }} > input[type='radio']:checked + label {
+      font-weight: 700;
+      background: #f4f4f4;
+    }
+    .tabset-{{ placement }} .tab-panel {
+      display: none;
+    }
+    .tabset-{{ placement }} > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+    .tabset-{{ placement }} > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2) {
+      display: block;
+    }
+    .tab-panel tr:nth-child(2) {
+      color: rgb(0 0 0 / 0.3);
+    }
+    .tab-panel tr td {
+      padding: 0.1rem 1rem;
+    }
+      
+    .sizeChart {
+        overflow:scroll;
+    }
+    #chart tr td {
+    padding: 0.1rem 0.5rem;
+    }
+    #chart tr:nth-child(2) {
+        font-weight: bold;
+    }
+    {% endstyle %}
+  {% endif %}
+  

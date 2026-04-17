@@ -1,0 +1,117 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "5675053d-3467-4746-963e-4514477aad42": {
+          "type": "title",
+          "settings": {}
+        },
+        "d5e4b255-784c-4754-9cbe-eddd84c93af2": {
+          "type": "price",
+          "settings": {}
+        },
+        "6d2130b9-35eb-4ec7-9832-b3555f913259": {
+          "type": "options",
+          "settings": {}
+        },
+        "548e2413-180e-4825-aba6-4f46e5ef4317": {
+          "type": "popups",
+          "settings": {}
+        },
+        "b033f3a3-2862-435c-8579-29bede720233": {
+          "type": "buttons_quantity",
+          "settings": {}
+        },
+        "e63a4691-7127-45d6-a8d8-191fe152dad6": {
+          "type": "payments",
+          "disabled": true,
+          "settings": {}
+        },
+        "description_jJKjBN": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "content": ""
+          }
+        },
+        "icon_with_text_j39FYm": {
+          "type": "icon_with_text",
+          "disabled": true,
+          "settings": {
+            "style": "inline",
+            "icon_svg_1": "theme-142",
+            "text_1": "<p>14 Day Returns</p>",
+            "icon_svg_2": "theme-127",
+            "text_2": "<p>International Express Shipping</p>",
+            "icon_svg_3": "",
+            "text_3": "",
+            "icon_svg_4": "",
+            "text_4": "",
+            "icon_svg_5": "",
+            "text_5": "",
+            "icon_svg_6": "",
+            "text_6": ""
+          }
+        },
+        "tab_custom_aGfxa3": {
+          "type": "tab_custom",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "",
+            "page_content": "shipping-returns"
+          }
+        }
+      },
+      "block_order": [
+        "5675053d-3467-4746-963e-4514477aad42",
+        "d5e4b255-784c-4754-9cbe-eddd84c93af2",
+        "6d2130b9-35eb-4ec7-9832-b3555f913259",
+        "548e2413-180e-4825-aba6-4f46e5ef4317",
+        "b033f3a3-2862-435c-8579-29bede720233",
+        "e63a4691-7127-45d6-a8d8-191fe152dad6",
+        "description_jJKjBN",
+        "icon_with_text_j39FYm",
+        "tab_custom_aGfxa3"
+      ],
+      "settings": {
+        "gallery_size": "6",
+        "sidebar": "off",
+        "enable_sticky_sidebar": false,
+        "show_tabs": true,
+        "show_tab_description": true,
+        "show_tab_reviews": false,
+        "scrolling_to_opened_tab": true,
+        "tabs_type": "tabs"
+      }
+    },
+    "related-products": {
+      "type": "carousel-related-products",
+      "settings": {
+        "show_section": true,
+        "type": "recommendations",
+        "size_of_columns": "4",
+        "max_count": 6,
+        "autoplay": false,
+        "speed": 5,
+        "infinite": true,
+        "arrows": true,
+        "bullets": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products"
+  ]
+}
