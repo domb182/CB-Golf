@@ -1726,7 +1726,7 @@ form {
   .product-page-main .pdp-col {
     padding: 60px 50px;
     max-width: 550px;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 @media (min-width: 768px) {
