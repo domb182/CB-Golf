@@ -2,11 +2,11 @@
   border-color: var(--theme) !important;
   color: var(--theme);
 }
-.product-options__value--text.active {
+/* .product-options__value--text.active {
   border-color: var(--theme-primary) !important;
   background-color: var(--theme-primary);
   color: var(--theme2);
-}
+} */
 
 @media (max-width: 540px) {
   .home-section-title,

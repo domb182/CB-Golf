@@ -77,12 +77,14 @@ liquid %}
                 {% if productOptions %}
                   <div class="product-options mt-10 mb-10">
                     {% assign colour = product.metafields.custom.colour %}
-                    <ul id="product-options" class="list-unstyled d-flex flex-wrap align-items-center gap-5">
+                    <ul id="product-options" class="list-unstyled d-flex align-items-center gap-2" style="overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; scroll-snap-type: x mandatory;">
                       {% for options in productOptions %}
                         {% assign colour = options.metafields.custom.colour %}
-                        <li class="product-options__value--text d-flex align-items-center {%  if product.handle == options.handle  %}active{% endif %}">
+                        <li class="product-options__value--text d-flex align-items-center {%  if product.handle == options.handle  %}active{% endif %}" style="flex-shrink: 0; scroll-snap-align: start;">
                           <a href="{{ options.handle }}" alt="{{ options.title }}">
-                            {{ colour | upcase}}
+                            {%- if options.featured_image -%}
+                              <img src="{{ options.featured_image | img_url: '60x60', crop: 'center' }}" alt="{{ colour | upcase}}" width="60" height="60" loading="lazy" style="object-fit: cover; display: block;">
+                            {%- endif -%}
                           </a>
                         </li>
                       {% endfor %}

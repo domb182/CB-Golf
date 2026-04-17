@@ -86,7 +86,7 @@
                     </div>
                 {%- endif -%}
             </div>
-            <div class="col-12 col-md-{{ 12 | minus: gallery_size }}{% if enable_sticky_gallery %} sticky-sidebar js-sticky-sidebar{% endif %}">
+            <div class="pdp-col col-12 col-md-{{ 12 | minus: gallery_size }}{% if enable_sticky_gallery %} sticky-sidebar js-sticky-sidebar{% endif %}">
                 {%- if enable_sticky_gallery -%}
                     <div {% if is_quick_view %} data-js-disable-offsets{% endif %}>
                 {%- endif -%}
